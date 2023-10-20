@@ -33,7 +33,7 @@ fn main() {
     let json_ct = HeaderValue::from_static("application/json");
     let server_header = HeaderValue::from_static("hyper");
 
-    println!("Rust hyper Server listening on 127.0.0.1:8080");
+    println!("Rust hyper Server listening on 127.0.0.1:8082");
 
     server::run(move |socket, http, handle| {
         // This closure is run for each connection...

@@ -45,7 +45,7 @@ where
     let handle = core.handle();
 
     // Bind to 0.0.0.0:8080
-    let addr = SocketAddr::from(([0, 0, 0, 0], 8080));
+    let addr = SocketAddr::from(([0, 0, 0, 0], 8082));
     let tcp = reuse_listener(&addr, &handle).expect("couldn't bind to addr");
 
     // For every accepted connection, spawn an HTTP task

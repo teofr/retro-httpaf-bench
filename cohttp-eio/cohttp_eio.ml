@@ -37,9 +37,14 @@ let app (req, _reader, _client_addr) =
   | _ -> Server.not_found_response
 
 let () =
-  let port = ref 8080 in
+  let port = ref 8082 in
   Arg.parse
     [ ("-p", Arg.Set_int port, " Listening port number(8080 by default)") ]
     ignore "An HTTP/1.1 server";
+  let domains =
+    match Sys.getenv_opt "COHTTP_DOMAINS" with
+    | Some d -> int_of_string d
+    | None -> 1
+  in
 
-  Eio_main.run @@ fun env -> Server.run ~port:!port env app
+  Eio_main.run @@ fun env -> Server.run ~domains ~port:!port env app

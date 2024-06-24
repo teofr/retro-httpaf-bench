@@ -4,3 +4,9 @@
 *.nix
 output*/**
 build
+
+# Builds
+rust-hyper/target/
+rust-hyper/rust_hyper.exe
+cohhtp-eio/cohhtp_eio.exe
+nethttp-go/nethttp_go.exe

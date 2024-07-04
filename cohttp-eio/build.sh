@@ -3,6 +3,7 @@
 
 set -xe
 
+opam init --disable-sandboxing -y
 opam switch remove --yes cohttp-eio-build || true
 rm -f ./cohttp_eio.exe || true
 opam switch create --packages=dune,eio_main.0.11,mdx,uri,fmt,ocaml.5.1.0,ptime cohttp-eio-build
